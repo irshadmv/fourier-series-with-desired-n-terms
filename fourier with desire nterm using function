@@ -1,0 +1,21 @@
+import numpy as np
+import matplotlib.pyplot as plt
+def term(n,t,T):
+  trm=1/n*np.cos(2*np.pi*n*t/T)
+  return trm
+t=20
+t=np.arange(0,100,0.01)
+def funct(x):
+  sum=0
+  for i in range(1,x+1):
+    termval=4/np.pi*((-1)**(i-1))*term(2*i-1,t,T)
+    sum=sum+termval
+  return sum
+plt.plot(t,funct(10),color='r',label='for 10 terms')
+plt.plot(t,funct(20),color='b',label='for 20 terms')
+plt.plot(t,funct(50),color='cyan',label='for 50 terms')
+plt.plot(t,funct(100),color='g',label='for 100 terms')
+plt.legend()
+plt.show()
+
+
